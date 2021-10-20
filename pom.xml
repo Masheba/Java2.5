@@ -29,7 +29,7 @@
                 <executions>
                     <execution><!-- id (придумываем сами) -->
                         <id>prepare-agent-564232</id>
-<!--                        <phase>initialize</phase>-->
+                        <!--                        <phase>initialize</phase>-->
                         <goals><!-- какую цель выполняем (берём из справки) -->
                             <goal>prepare-agent</goal>
                         </goals>
@@ -40,7 +40,27 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
                 </executions>
+                <configuration>
+                    <rules>
+                        <rule>
+                            <limits>
+                                <limit>
+                                    <counter>LINE</counter>
+                                    <value>COVEREDRATIO</value>
+                                    <minimum>100%</minimum>
+                                </limit>
+                            </limits>
+                        </rule>
+                    </rules>
+                </configuration>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
