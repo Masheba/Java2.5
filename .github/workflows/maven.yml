@@ -3,7 +3,7 @@
 
 name: Java 2.5 with Maven
 
-on: [push, pull_request]
+on: [push]
   
 jobs:
   build:
